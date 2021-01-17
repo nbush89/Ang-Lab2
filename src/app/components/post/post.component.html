@@ -1,0 +1,17 @@
+<div class="entire-post">
+  <div class="post">
+    <p class="title">{{ singlePost.title }}</p>
+    <p class="thought">{{ singlePost.thought }}</p>
+    <div class="like-wrapper">
+      <button (click)="upVote()" class="like-btn">
+        <i
+          [ngStyle]="{ color: likeCounter > 0 ? 'cornflowerBlue' : 'black' }"
+          class="fas fa-thumbs-up"
+        ></i>
+      </button>
+      <p *ngIf="likeCounter < 1">Like!</p>
+      <p *ngIf="likeCounter > 0">{{ likeCounter }}</p>
+    </div>
+  </div>
+  <button (click)="deletePost()"><i class="fas fa-times"></i></button>
+</div>
